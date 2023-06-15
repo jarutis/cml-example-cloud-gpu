@@ -80,7 +80,7 @@ if K.image_data_format() == 'channels_first':
 else:
     combination_image = K.placeholder((1, img_nrows, img_ncols, 3))
 
-# combine the 3 images into a single Keras tensor
+# combine the 3 images into a single Keras tensor aa
 input_tensor = K.concatenate([base_image,
                               style_reference_image,
                               combination_image], axis=0)
