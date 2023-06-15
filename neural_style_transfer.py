@@ -13,7 +13,7 @@ import tensorflow as tf
 
 tf.compat.v1.disable_eager_execution()
 
-
+# some comment
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('base_image_path', metavar='base', type=str,
                     help='Path to the image to transform.')
