@@ -18,7 +18,9 @@ jobs:
           --cloud-region=eu-central-1b \
           --cloud-type=p2.xlarge \
           --cloud-hdd-size=64 \
-          --labels=cml-gpu
+          --labels=cml-gpu \
+          --cloud-aws-subnet=subnet-0b05ae1c12c11e6cb \
+          --cloud-aws-security-group=sg-00093b72abdec5c3c
   train-and-report:
     runs-on: [self-hosted, cml-gpu]
     needs: launch-runner
