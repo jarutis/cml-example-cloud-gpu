@@ -15,7 +15,7 @@ jobs:
         run: |
           cml runner launch \
           --cloud=aws \
-          --cloud-region=us-east-1 \
+          --cloud-region=eu-central-1 \
           --cloud-type=p2.xlarge \
           --cloud-hdd-size=64 \
           --labels=cml-gpu
