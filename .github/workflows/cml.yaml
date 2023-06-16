@@ -20,7 +20,8 @@ jobs:
           --cloud-hdd-size=64 \
           --labels=cml-gpu \
           --cloud-aws-subnet=subnet-001462dd31ce22c08 \
-          --cloud-aws-security-group=sg-00093b72abdec5c3c
+          --cloud-aws-security-group=sg-00093b72abdec5c3c \
+          --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0)
   train-and-report:
     runs-on: [self-hosted, cml-gpu]
     needs: launch-runner
