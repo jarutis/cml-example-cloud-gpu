@@ -15,13 +15,12 @@ jobs:
         run: |
           cml runner launch \
           --cloud=aws \
-          --cloud-region=eu-central-1b \
+          --cloud-region=eu-central-1 \
           --cloud-type=p3.2xlarge \
           --cloud-hdd-size=64 \
           --labels=cml-gpu \
           --cloud-aws-subnet=subnet-1a0bad67 \
           --cloud-aws-security-group=sg-00093b72abdec5c3c \
-          --cloud-startup-script=$(echo 'curl https://github.com/${{ github.actor }}.keys >> /home/ubuntu/.ssh/authorized_keys' | base64 -w 0)
   train-and-report:
     runs-on: [self-hosted, cml-gpu]
     needs: launch-runner
